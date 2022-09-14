@@ -1,45 +1,45 @@
 AFRAME.registerComponent("wire-fence", {
   init: function () {
-    //starting x position
+    //posición inicial de x
     posX = -20;
-    //starting z-position
+    //posición inicial de z
     posZ = 85;
 
     for (var i = 0; i < 10; i++) {
-      //create wire-fence entity
+      //Crear entidad de cerca de alambre
       var wireFence1 = document.createElement("a-entity");
       var wireFence2 = document.createElement("a-entity");
       var wireFence3 = document.createElement("a-entity");
       var wireFence4 = document.createElement("a-entity");
 
 
-      //set x, y and z position
+      //Establecer la posición de x, y, z
       posX = posX + 5;
       posY = 2.5;
       posZ = posZ - 10;
 
-      //scale 
+      //escala 
       var scale = { x: 2, y: 2, z: 2 };
 
-      //set the id
+      //Establecer id
       wireFence1.setAttribute("id", "wireFence1" + i);
       wireFence2.setAttribute("id", "wireFence2" + i);
       wireFence3.setAttribute("id", "wireFence3" + i);
       wireFence4.setAttribute("id", "wireFence4" + i);
 
-      //set the position
+      //Establecer la posición
       wireFence1.setAttribute("position", { x: posX, y: 2.5, z: -35 });
       wireFence2.setAttribute("position", { x: posX, y: 2.5, z: 85 });
       wireFence3.setAttribute("position", { x: -30, y: 2.5, z: posZ });
       wireFence4.setAttribute("position", { x: 50, y: 2.5, z: posZ });
 
-      //set the scale
+      //Establecer la escala
       wireFence1.setAttribute("scale", scale);
       wireFence2.setAttribute("scale", scale);
       wireFence3.setAttribute("scale", scale);
       wireFence4.setAttribute("scale", scale);
 
-      //set the model
+      //Establecer el modelo
       wireFence1.setAttribute(
         "gltf-model",
         "./models/barbed_wire_fence/scene.gltf"
@@ -60,18 +60,18 @@ AFRAME.registerComponent("wire-fence", {
         "./models/barbed_wire_fence/scene.gltf"
       );
 
-      //set the rotation
+      //Establecer la rotación
       wireFence3.setAttribute("rotation", { x: 0, y: 90, z: 0 });
       wireFence4.setAttribute("rotation", { x: 0, y: 90, z: 0 });
 
-      //set the physics body
+      //Establecer el cuerpo físico
       wireFence1.setAttribute("static-body", {});
       wireFence2.setAttribute("static-body", {});
       wireFence3.setAttribute("static-body", {});
       wireFence4.setAttribute("static-body", {});
 
       var sceneEl = document.querySelector("#scene");
-      //attach the entity to the scene
+      //Adjuntar la entidad a la escena
       sceneEl.appendChild(wireFence1);
       sceneEl.appendChild(wireFence2);
       sceneEl.appendChild(wireFence3);
@@ -82,7 +82,7 @@ AFRAME.registerComponent("wire-fence", {
 });
 
 
-//boxes
+//Cajas
 AFRAME.registerComponent("boxes", {
   schema: {
     height: { type: "number", default: 2 },
@@ -91,13 +91,13 @@ AFRAME.registerComponent("boxes", {
   },
   init: function () {
 
-    //x position array
+    //Matriz de posición x
     px = [22.86, -17.35, -12.81, 0.44, -30.18,
       -25.89, 15.61, 29.68, 11.95, -15.40,
       -14.09, 34.76, 2.29, 21.77, 1.57,
       34.72, 12.04, -10.90, 6.48, 15.66];
 
-    //z position array
+    //Matriz de posición z
     pz = [54.56, -4.71, 14.91, 56.74, 41.13,
       50.76, 57.84, 7.02, -5.24, -26.82,
       27.59, -35.78, 34.52, 31.32, -9.22,
