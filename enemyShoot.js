@@ -4,12 +4,12 @@ AFRAME.registerComponent("enemy-bullets", {
     },
     shootEnemyBullet: function () {
 
-        //get all enemies using className
+        //obtener todos los enemigos usando el nombre de la clase
         var els = document.querySelectorAll(".enemy");
 
         for (var i = 0; i < els.length; i++) {
 
-            //enemyBullet entity
+            //Entidad de la bala del enemigo
             var enemyBullet = document.createElement("a-entity");
 
             enemyBullet.setAttribute("geometry", {
@@ -33,22 +33,22 @@ AFRAME.registerComponent("enemy-bullets", {
             //Three.js Vector Variables
             
 
-            //Get enemey and player position using Three.js methods
+            //Obtener la posición del enemigo y jugador usando el método Three.js 
             
 
-            //set the velocity and it's direction
+            //Establecer la velocidad y su dirección
             
-            //Set dynamic-body attribute
-            
-
-            //Get text attribute
+            //Establecer el atributo del cuerpo dinámico
             
 
-            //collide event on enemy bullets
+            //Obtener atributo de texto
+            
+
+            //Evento de colisión con las balas enemigas
             enemyBullet.addEventListener("collide", function (e) {
                 if (e.detail.body.el.id === "weapon") {
 
-                    //Add the conditions here
+                    //Agrega las condiciones aquí
 
 
 
